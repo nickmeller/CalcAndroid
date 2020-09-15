@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.faendir.rhino_android.RhinoAndroidHelper
 import kotlinx.android.synthetic.main.activity_main.*
 import org.mozilla.javascript.Context
 import org.mozilla.javascript.EvaluatorException
@@ -53,17 +52,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonEval.setOnClickListener {
+
+
             val context = Context.enter()
             context.optimizationLevel = -1
             val scope = ImporterTopLevel(context)
             try {
                 calcField = context.evaluateString(scope, calcField, "test", 1, null).toString()
-                if (calcField.equals("Infinity") || calcField.equals("NaN")) {
-                    Toast.makeText(this, calcField, Toast.LENGTH_LONG).show()
+                if (calcField.equals("Infinity") || calcField.equals("NaN") ) {
+                    Toast.makeText(this, calcField, Toast.LENGTH_SHORT).show()
+                    calcField = ""
+                } else if ( calcField.contains("Undefined")){
+                    Toast.makeText(this, R.string.undefinedError, Toast.LENGTH_SHORT).show()
                     calcField = ""
                 }
             } catch (e: EvaluatorException) {
-                Toast.makeText(this, R.string.unexpectedInputError, Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.unexpectedInputError, Toast.LENGTH_SHORT).show()
                 calcField = ""
             }
             updateCalcField()

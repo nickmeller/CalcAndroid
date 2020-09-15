@@ -20,4 +20,5 @@
     <string name="calc">Calculate</string>
     <string name="dot">.</string>
     <string name="unexpectedInputError">Looks like you have entered something illegal lol xD</string>
+    <string name="undefinedError">Undefined expression</string>
 </resources>
