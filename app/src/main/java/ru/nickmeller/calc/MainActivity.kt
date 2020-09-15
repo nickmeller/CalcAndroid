@@ -1,8 +1,14 @@
 package ru.nickmeller.calc
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.faendir.rhino_android.RhinoAndroidHelper
 import kotlinx.android.synthetic.main.activity_main.*
+import org.mozilla.javascript.Context
+import org.mozilla.javascript.EvaluatorException
+import org.mozilla.javascript.ImporterTopLevel
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,9 +16,9 @@ class MainActivity : AppCompatActivity() {
         const val TAG = "MainActivity"
         const val CALC_FIELD_KEY = "CALC_FIELD_KEY"
     }
-    var calcField = "Empty"
-    val textButtons = arrayOf(buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine,
-        buttonPlus, buttonMinus, buttonMul, buttonDiv)
+
+    private var calcField = ""
+    private lateinit var textButtons: Array<Button>
 
     private fun updateCalcField() {
         calcFieldLabel.text = calcField
@@ -24,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        calcField = savedInstanceState.getString(CALC_FIELD_KEY)!!
+        calcField = savedInstanceState.getString(CALC_FIELD_KEY)?: ""
         updateCalcField()
         super.onRestoreInstanceState(savedInstanceState)
     }
@@ -32,15 +38,35 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        textButtons = arrayOf(buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine,
+            buttonPlus, buttonMinus, buttonMul, buttonDiv, buttonDot)
         for (button in textButtons) {
             button.setOnClickListener {
                 calcField += button.text
                 updateCalcField()
             }
         }
+
         buttonClear.setOnClickListener {
             calcField = ""
+            updateCalcField()
+        }
+
+        buttonEval.setOnClickListener {
+            val context = Context.enter()
+            context.optimizationLevel = -1
+            val scope = ImporterTopLevel(context)
+            try {
+                calcField = context.evaluateString(scope, calcField, "test", 1, null).toString()
+                if (calcField.equals("Infinity") || calcField.equals("NaN")) {
+                    Toast.makeText(this, calcField, Toast.LENGTH_LONG).show()
+                    calcField = ""
+                }
+            } catch (e: EvaluatorException) {
+                Toast.makeText(this, R.string.unexpectedInputError, Toast.LENGTH_LONG).show()
+                calcField = ""
+            }
+            updateCalcField()
         }
     }
 }

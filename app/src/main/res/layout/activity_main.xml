@@ -13,6 +13,11 @@
         android:textSize="30sp"
         android:gravity="center"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonEval"
+        android:text="@string/calc" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -120,20 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
-        <Button
-            android:textSize="30sp"
-            android:id="@+id/buttonDiv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/div"/>
-        <Button
-            android:textSize="30sp"
-            android:id="@+id/buttonClear"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/clear" />
+
         <Button
             android:textSize="30sp"
             android:id="@+id/buttonZero"
@@ -143,10 +135,24 @@
             android:text="@string/zero"/>\
         <Button
             android:textSize="30sp"
-            android:id="@+id/buttonEval"
+            android:id="@+id/buttonClear"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/eval"/>\
+            android:text="@string/clear" />
+        <Button
+            android:textSize="30sp"
+            android:id="@+id/buttonDot"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/dot" />
+        <Button
+            android:textSize="30sp"
+            android:id="@+id/buttonDiv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/div"/>
     </LinearLayout>
 </LinearLayout>
