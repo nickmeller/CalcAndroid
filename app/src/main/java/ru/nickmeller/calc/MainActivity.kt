@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 if (calcField.equals("Infinity") || calcField.equals("NaN") ) {
                     Toast.makeText(this, calcField, Toast.LENGTH_SHORT).show()
                     calcField = ""
-                } else if ( calcField.contains("Undefined")){
+                } else if ( calcField.contains("Undefined") || calcField.contains("Error")) {
                     Toast.makeText(this, R.string.undefinedError, Toast.LENGTH_SHORT).show()
                     calcField = ""
                 }

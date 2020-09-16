@@ -136,7 +136,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/zero"
-            tools:ignore="NestedWeights" />\
+            tools:ignore="NestedWeights" />
         <Button
             android:textSize="30sp"
             android:id="@+id/buttonClear"
