@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
@@ -29,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/one"/>
+            android:text="@string/one"
+            tools:ignore="NestedWeights" />
         <Button
             android:textSize="30sp"
             android:id="@+id/buttonTwo"
@@ -63,7 +65,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/four"/>
+            android:text="@string/four"
+            tools:ignore="NestedWeights" />
         <Button
             android:textSize="30sp"
             android:id="@+id/buttonFive"
@@ -97,7 +100,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/seven"/>
+            android:text="@string/seven"
+            tools:ignore="NestedWeights" />
         <Button
             android:textSize="30sp"
             android:id="@+id/buttonEight"
@@ -125,14 +129,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
-
         <Button
             android:textSize="30sp"
             android:id="@+id/buttonZero"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/zero"/>\
+            android:text="@string/zero"
+            tools:ignore="NestedWeights" />\
         <Button
             android:textSize="30sp"
             android:id="@+id/buttonClear"
