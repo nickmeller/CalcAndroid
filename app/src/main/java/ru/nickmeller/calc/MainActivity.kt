@@ -52,14 +52,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonEval.setOnClickListener {
-
-
             val context = Context.enter()
             context.optimizationLevel = -1
             val scope = ImporterTopLevel(context)
             try {
                 calcField = context.evaluateString(scope, calcField, "test", 1, null).toString()
-                if (calcField.equals("Infinity") || calcField.equals("NaN") ) {
+                if (calcField == "Infinity" || calcField == "NaN") {
                     Toast.makeText(this, calcField, Toast.LENGTH_SHORT).show()
                     calcField = ""
                 } else if ( calcField.contains("Undefined") || calcField.contains("Error")) {

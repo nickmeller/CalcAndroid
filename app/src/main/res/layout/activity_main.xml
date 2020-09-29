@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
@@ -25,33 +24,20 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonOne"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/one"
-            tools:ignore="NestedWeights" />
+            android:text="@string/one" />
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/two"/>
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonThree"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/three"/>
+            android:text="@string/three" />
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonPlus"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/plus"/>
     </LinearLayout>
     <LinearLayout
@@ -60,33 +46,20 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonFour"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/four"
-            tools:ignore="NestedWeights" />
+            android:text="@string/four" />
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonFive"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/five"/>
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonSix"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/six"/>
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonMinus"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/minus"/>
     </LinearLayout>
     <LinearLayout
@@ -95,33 +68,20 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonSeven"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/seven"
-            tools:ignore="NestedWeights" />
+            android:text="@string/seven"/>
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonEight"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/eight"/>
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonNine"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/nine"/>
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonMul"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/mul"/>
     </LinearLayout>
     <LinearLayout
@@ -130,33 +90,20 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonZero"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/zero"
-            tools:ignore="NestedWeights" />
+            android:text="@string/zero" />
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonClear"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/clear" />
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonDot"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/dot" />
         <Button
-            android:textSize="30sp"
+            style="@style/CalcButton"
             android:id="@+id/buttonDiv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/div"/>
     </LinearLayout>
 </LinearLayout>
